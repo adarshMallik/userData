@@ -18,17 +18,20 @@ const Update = () => {
   }, [])
   
   // updating API using axios with the modified data using id
-  const updateAPIData = () => {
+  const updateAPIData = (e) => {
+      e.preventDefault()
       axios.put(`https://6120eca524d11c001762ee89.mockapi.io/fakeData/${id}`,{
         firstName,
         lastName
       }).then(() => {
-          history.push('/read')
+          history.push('/')
       })
   }
 
   return (
-    <Form className="create-form">
+      <div>
+          <h4 className="sub-header">Update Page</h4>
+    <Form className="create-form" onSubmit={updateAPIData}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>First Name</Form.Label>
         <Form.Control
@@ -48,10 +51,11 @@ const Update = () => {
           onChange={(e) => setLastName(e.target.value)}
         />
       </Form.Group>
-      <Button variant="primary" type="submit" onClick={updateAPIData}>
+      <Button variant="primary" type="submit">
         Update
       </Button>
     </Form>
+    </div>
   );
 };
 

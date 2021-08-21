@@ -42,6 +42,10 @@ const getData = () => {
 }
  
 return (
+<div>
+    <Link to='/create'>
+        <Button variant="primary" style={{marginBottom: "20px"}}>Create</Button>
+    </Link>
 <Table striped bordered hover variant="dark">
   <thead>
     <tr>
@@ -67,6 +71,7 @@ return (
    
   </tbody>
 </Table>
+</div>
     )
 }
 

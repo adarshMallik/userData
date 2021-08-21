@@ -24,6 +24,10 @@
   font-family:'Staatliches',sans-serif ;
 }
 
+.sub-header{
+  color: rgb(250, 167, 14) !important;
+  font-family: 'Montserrat', sans-serif;
+}
 .create-form label{
   color: whitesmoke !important;
   font-family: 'Montserrat', sans-serif;

@@ -10,17 +10,20 @@ const Create = () => {
   let history = useHistory();
 
   // creating a function to check the data is captred after submit
-  const postData = () => {
+  const postData = (e) => {
+    e.preventDefault()
     // send data to the api using axios
      axios.post(`https://6120eca524d11c001762ee89.mockapi.io/fakeData`,{
        firstName,
        lastName
      }).then(()=>{
-         history.push('./read')
+         history.push('./')
      });
   };
   return (
-    <Form className="create-form">
+    <div>
+        <h4 className="sub-header">Create Page</h4>
+    <Form className="create-form" onSubmit={postData}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>First Name</Form.Label>
         <Form.Control
@@ -38,10 +41,12 @@ const Create = () => {
           onChange={(e) => setLastName(e.target.value)}
         />
       </Form.Group>
-      <Button variant="primary" type="submit" onClick={postData}>
+
+      <Button variant="primary" type="submit">
         Submit
       </Button>
     </Form>
+    </div>
   );
 };
 
