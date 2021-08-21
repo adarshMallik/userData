@@ -24,8 +24,6 @@ const Update = () => {
         lastName
       }).then(() => {
           history.push('/read')
-      }).catch((error) => {
-        console.log(error);
       })
   }
 

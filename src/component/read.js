@@ -17,13 +17,11 @@ useEffect(() => {
 }, [])
 
 const setData =(data) => {
-    // destructure data into id,name,checkbox
-    let {id,firstName,lastName,checkbox} = data;
+    // destructure data into id,name
+    let {id,firstName,lastName} = data;
     localStorage.setItem('ID',id);
     localStorage.setItem('First Name',firstName);
     localStorage.setItem('Last Name',lastName);
-    localStorage.setItem('Checkbox Value',checkbox);
-
 }
 
 //Delete
